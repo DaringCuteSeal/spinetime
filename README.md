@@ -1,4 +1,4 @@
-# SpineTime
+# Spinetime
 
 Spinetime is a ring binder-integrated _linear clock [^1]_ designed to help
 students and neurodivergent individuals manage time and tasks more effectively.
