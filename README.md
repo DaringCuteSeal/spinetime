@@ -1,9 +1,9 @@
 # SpineTime
 
-Spinetime is a ring binder-integrated _linear clock[^1]_ designed to help students
-and neurodivergent individuals manage time and tasks more effectively. Users of
-Spinetime can visualize the passage of the day at a glance, providing aid
-especially for those who struggle with time blindness.
+Spinetime is a ring binder-integrated _linear clock [^1]_ designed to help
+students and neurodivergent individuals manage time and tasks more effectively.
+Users of Spinetime can visualize the passage of the day at a glance, providing
+aid especially for those who struggle with time blindness.
 
 ## Why?
 
@@ -18,8 +18,8 @@ for those who struggle with time blindness like me.
 
 ## Background
 
-As someone who suffers time blindness on a daily basis, I find managing my time
-extremely challenging. It's been intensely hard to picture how I'll spend
+As someone who suffers from time blindness on a daily basis, I find managing my
+time extremely challenging. It's been intensely hard to picture how I'll spend
 my time for a particular day. Having shuffled between multiple time management
 methods, I constantly find myself at home when I plan my day out on my physical
 journal. I simply love the tactile feel of using a physical tool to plan out my
