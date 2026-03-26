@@ -53,6 +53,13 @@ the linear clock component and start annotating your day. This repository hosts
 the A6 binder-compatible
 version.
 
+## Credits
+
+I used several 3D models for my PCB 3D model:
+- https://grabcad.com/library/usb-type-c-smd-6pin-1
+- https://grabcad.com/library/2-pins-jst-1
+- https://grabcad.com/library/3-pins-jst-1
+
 [^1]: Analog clock that shows time in a linear format, instead of the usual
 12-hour wrap-around style. This clock is often suggested for those with ADHD &
 time blindness.
