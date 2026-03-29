@@ -9942,10 +9942,10 @@
 		(layer "Edge.Cuts")
 		(uuid "f4f60742-8c95-438e-ac58-5de7ce4c523d")
 	)
-	(gr_text "UPDI"
+	(gr_text "DBG"
 		(at 40.5 39.5 0)
 		(layer "F.SilkS")
-		(uuid "99fe5bac-11f9-4a34-8cd9-750401463f42")
+		(uuid "83b46986-c47d-4f7a-ba84-bec2b2a2ff42")
 		(effects
 			(font
 				(size 1 1)
@@ -9953,10 +9953,10 @@
 			)
 		)
 	)
-	(gr_text "DBG"
-		(at 48.5 39.5 0)
+	(gr_text "UPDI"
+		(at 49 39.5 0)
 		(layer "F.SilkS")
-		(uuid "83b46986-c47d-4f7a-ba84-bec2b2a2ff42")
+		(uuid "99fe5bac-11f9-4a34-8cd9-750401463f42")
 		(effects
 			(font
 				(size 1 1)
