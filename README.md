@@ -44,7 +44,7 @@ dream that one day, I won't forget several of my appointments again.
 
 I looked at my own journalling book again, and thought: _you know, I
 think that ChronoCat's approach doesn't have to be in the form of a
-digital app._ And so, I decided to come up with Timespine.
+digital app._ And so, I came up with SpineTime.
 
 ## How to Use
 
