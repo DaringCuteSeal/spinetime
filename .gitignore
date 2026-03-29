@@ -1,2 +1,3 @@
 .history
 kicad/controller/controller-backups/**
+*.lck
