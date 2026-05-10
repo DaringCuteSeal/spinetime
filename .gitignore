@@ -1,3 +1,7 @@
 .history
 kicad/controller/controller-backups/**
 *.lck
+*.gbr
+*.drl
+*.zip
+*.gbrjob
