@@ -4,9 +4,7 @@
 ![SpineTime magazine page](showcase/zine.png)
 [Magazine PDF](showcase/zine.pdf)
 
-## TODO
-- [ ] upload my custom KiCad footprint & symbol library
-- [ ] make BOM and put here
+---
 
 ![Mockup of Spinetime](showcase/mockup.png)
 
