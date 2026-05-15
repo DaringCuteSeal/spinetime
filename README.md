@@ -16,13 +16,14 @@ aid especially for those who struggle with time blindness.
 ## Why?
 
 It is surprising to me that people have manufactured papers with time table
-template, but not invent something as simple as a pointer that tells you how far
-you have gone through your table. I suspect that this is because most people
-aren't time blind, and having some kind of pointer of the table isn't really all
-that useful for them. This is simply not the case for those with time blindness:
-**time doesn't really mean anything if presented in the wrong way.** I hope that
-the proof of concept that came with Spinetime may help present time meaningfully
-for those who struggle with time blindness like me.
+template, but not invent something as simple as a pointer that tells you how
+far you have gone through your table. I suspect that this is because most
+people do not experience time blindness, and having some kind of pointer of the
+table isn't really all that useful. This is simply not the case for
+those with time blindness: **time doesn't really mean anything if presented in
+the wrong way.** I hope that the proof of concept that came with Spinetime may
+help present time meaningfully for those who struggle with time blindness like
+me.
 
 ## Background
 
