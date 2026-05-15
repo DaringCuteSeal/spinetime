@@ -75,7 +75,7 @@ You will need:
 8. USB-C cable
 
 Steps:
-1. Print the [PCBs](#Project-Design-Showcase). Customize if needed.
+1. Print the [PCBs](#Project-Design-Showcase). Customize if needed. Note that the gerbers aren't included, so you'd have to generate them first from KiCad.
 2. Solder components listed on the [BOM](#BOM) according to the PCB file.
 3. 3D print the casing components.
 3. Build the [firmware](#firmware). Customize as you wish. You'll need [PlatformIO](https://platformio.org/).
