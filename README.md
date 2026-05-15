@@ -19,11 +19,10 @@ It is surprising to me that people have manufactured papers with time table
 template, but not invent something as simple as a pointer that tells you how
 far you have gone through your table. I suspect that this is because most
 people do not experience time blindness, and having some kind of pointer of the
-table isn't really all that useful. This is simply not the case for
-those with time blindness: **time doesn't really mean anything if presented in
-the wrong way.** I hope that the proof of concept that came with Spinetime may
-help present time meaningfully for those who struggle with time blindness like
-me.
+table isn't really all that useful. This is simply not the case for those with
+time blindness: **time doesn't really mean anything if presented in the wrong
+way.** I hope that the proof of concept that came with Spinetime may help
+present time meaningfully for those who struggle with time blindness like me.
 
 ## Background
 
@@ -101,7 +100,7 @@ The firmware files for SpineTime, `spinetime-fw`, can be [found in this repo](ht
 
 ## Credits
 
-Thanks to [Hack Club](https://hackclub.com/) for supporting! Initially made for [Hack Club Blueprint](https://blueprint.hackclub.com), but soon to be transferred to [Hack Club Fallout](https://fallout.hackclub.com/).
+Thanks to [Hack Club](https://hackclub.com/) for supporting! Initially made for [Hack Club Blueprint](https://blueprint.hackclub.com), but later got transferred to [Hack Club Fallout](https://fallout.hackclub.com/).
 
 **Awesome software used:**
 - [KiCad](https://www.kicad.org/) (as EDA)
