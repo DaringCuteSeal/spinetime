@@ -96,7 +96,8 @@ Support clip (so your book cover won't wobble when being written on):
 The firmware files for SpineTime, `spinetime-fw`, can be [found in this repo](https://github.com/DaringCuteSeal/spinetime-fw).
 
 ## BOM
-WIP, but it should later consist of PCBA, a li-po battery, and local 3d printing service.
+[BOM/bill of materials for this project can be found here](bom/bom.csv).
+
 ## Credits
 
 Thanks to [Hack Club](https://hackclub.com/) for supporting! Initially made for [Hack Club Blueprint](https://blueprint.hackclub.com), but soon to be transferred to [Hack Club Fallout](https://fallout.hackclub.com/).
