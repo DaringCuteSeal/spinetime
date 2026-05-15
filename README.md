@@ -73,7 +73,7 @@ You will need:
 3. Everything from [BOM](#BOM)
 4. A USB-to-TTL adapter such as a CH340 breakout module
 5. Wire crimper
-6. Wire cutter
+6. Wire cuttem
 7. Scissors
 8. USB-C cable
 
@@ -120,7 +120,7 @@ Support clip (so your book cover won't wobble when being written on):
 ![Support clip 3D model](showcase/support-clip.png)
 
 ### Firmware
-The firmware files for SpineTime, `spinetime-fw`, can be [found in this repo](https://github.com/DaringCuteSeal/spinetime-fw).
+The firmware files for SpineTime, `spinetime-fw`, can be [found in the firmware directory](./firmware).
 
 ## BOM
 [BOM/bill of materials for this project can be found here](bom/bom.csv).

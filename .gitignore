@@ -5,3 +5,5 @@ kicad/controller/controller-backups/**
 *.drl
 *.zip
 *.gbrjob
+.pio
+.vscode/**
