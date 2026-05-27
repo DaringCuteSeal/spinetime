@@ -3820,7 +3820,7 @@
 		)
 		(uuid "1058f2d8-2994-4d96-b320-2963c1b5cf3a")
 	)
-	(text "Divides voltage from the 0-5 V range\ninto 0-1.0159 V range for ADC reading."
+	(text "Divides voltage from the 0-5 V range\ninto 0-1.013 V range for ADC reading."
 		(exclude_from_sim no)
 		(at 186.436 62.23 0)
 		(effects
@@ -9706,7 +9706,7 @@
 				)
 			)
 		)
-		(property "Value" "255K"
+		(property "Value" "200K"
 			(at 193.04 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9942,7 +9942,7 @@
 				)
 			)
 		)
-		(property "Value" "1M"
+		(property "Value" "787K"
 			(at 177.8 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
