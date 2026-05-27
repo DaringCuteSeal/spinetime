@@ -5,7 +5,7 @@
 4,"C22366440","DMP1045U-HXY","HXY MOSFET","SOT-23","P-Channel 20V 5A 1.4W Surface Mount SOT-23","TRUE",1,10,10,10,"$0.06240","$0.62","https://www.lcsc.com/product-detail/C22366440.html","FALSE",
 5,"C20996","SMD1812P075TF","RUILON",1812,"Polymeric PTC Resettable Fuse 13.2V 750mA Surface Mount 1812","TRUE",1,5,5,5,"$0.08730","$0.44","https://www.lcsc.com/product-detail/C20996.html","FALSE",
 6,"C15008","CL31A107MQHNNNE","Samsung Electro-Mechanics",1206,"100uF ±20% 6.3V Ceramic Capacitor X5R 1206","TRUE",3,10,10,10,"$0.06810","$0.68","https://www.lcsc.com/product-detail/C15008.html","FALSE",
-7,"C2100","1SS404","JSCJ","SOD-323","Diode 20V 300mA Surface Mount SOD-323","TRUE",1,20,20,20,$0.0807,"$0.81","https://www.lcsc.com/product-detail/C2100.html","FALSE",
+7,"C2100","1SS404","JSCJ","SOD-323","Diode 20V 300mA Surface Mount SOD-323","TRUE",1,20,20,20,"$0.0807","$0.81","https://www.lcsc.com/product-detail/C2100.html","FALSE",
 8,"C2937639","SMD1812P020TF","PTTC(Polytronics Tech)",1812,"Polymeric PTC Resettable Fuse 30V 200mA Surface Mount 1812","TRUE",1,10,10,10,"$0.08940","$0.89","https://www.lcsc.com/product-detail/C2937639.html","FALSE",
 9,"C15401","0603WAJ0103T5E","UNI-ROYAL",603,"10kΩ ±5% 100mW 0603 Thick Film Resistor","TRUE",3,100,100,100,"$0.0012","$0.12","https://www.lcsc.com/product-detail/C15401.html","FALSE",
 10,"C23186","0603WAF5101T5E","UNI-ROYAL",603,"5.1kΩ ±1% 100mW 0603 Thick Film Resistor","TRUE",2,100,100,100,"$0.00160","$0.16","https://www.lcsc.com/product-detail/C23186.html","FALSE",
@@ -29,7 +29,4 @@
 28,,,"Unknown","3mm THT","3mm diffused LED green (used for full battery indicator)","Unknown",1,10,10,1,"Rp250","Rp2,500","https://shopee.co.id/product/2178321/3603345974/","TRUE",
 29,,,"Unknown","5cm*5cm","Rubber sheet for anti-slipping","Unknown",1,7,7,1,"Rp1,527","Rp10,689","https://shopee.co.id/product/274611018/28530490992","FALSE",
 30,,,"PegangInd",,"3D printing service with PETG filament","Unknown",39,39,1,1,"Rp799","Rp31,161","https://shopee.co.id/product/234204219/26236129391","FALSE","Nice cheap local printing service. Price is in per gram of filament (includes extra filament for support)."
-31,,,,,"Shipping fee (Singapore Post, 20-35 business days)",,,,,,"$6.38","$6.38",,,
-32,,,,,"LCSC merchandise discount",,,,,,"-$0.01","-$0.01",,,
-33,,,,,"Customs and tax (estimation): 11% tax + 7.5% customs",,,,,,"Rp111,066","Rp111,066",,,"Item: $33. To IDR: Rp574,728. Import duties: (1+7.5%)(Rp574,728)=Rp617,832.6. 11% tax (“PPN”): 11%*Rp617,832.6 = IDR Rp67,961.586. Total needed: Rp43,104.6 + Rp67,961.586 = IDR 111,066. Calculated on May 11th 2026, with 1 USD = IDR 17,416.00384. Price might increase anytime soon."
-34,,,,,"Handling fee (worst case)",,,,,,"Rp30,000","Rp30,000",,,
+31,,,,,"Shipping fee (SF International Standard Express)",,,,,,"$23.99","$23.99",,,
