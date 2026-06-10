@@ -73,7 +73,7 @@ You will need:
 3. Everything from [BOM](#BOM)
 4. A USB-to-TTL adapter such as a CH340 breakout module
 5. Wire crimper
-6. Wire cuttem
+6. Wire stripper
 7. Scissors
 8. USB-C cable
 
