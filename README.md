@@ -85,7 +85,7 @@ Steps:
 5. Put together everything into the casing: the battery, the controller PCB, and the anti-slip rubbers (might need to be cut to the correct size first, fitting the casing's square indents).
 6. If your battery hasn't been crimped yet, crimp the cables to the 2-pin JST. Then plug the battery connector to the controller.
 7. Build the [firmware](#firmware). Customize as you wish. You'll need [PlatformIO](https://platformio.org/).
-8. FLash the firmware. Initially, set `SET_TIME` to `true` in the `cfg.h` file first to set time, then flash again with `SET_TIME` set to `false`. You will need a USB-to-TTL adapter. Connect the TX pin of the adapter to the RX pin of SpineTime's controller PCB and the RX pin of the adapter to TX. Note that the PCB doesn't have labels for that.. just check the kicad file to know which is which :P. Then, connect the adapter's ground accordingly.
+8. FLash the firmware. Initially, set `SET_TIME` to `true` in the `cfg.h` file first to set time, then flash again with `SET_TIME` set to `false`. You will need a USB-to-TTL adapter. Connect the TX pin of the adapter to the TX pin of SpineTime's controller PCB and the RX pin of the adapter to RX. Note that the PCB doesn't have labels for that.. just check the kicad file to know which is which :P. Then, connect the adapter's ground accordingly.
 9. You should be done! There's no screw assembly required—everything uses compliant mechanism.
 
 ## Spelling
