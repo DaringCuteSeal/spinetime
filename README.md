@@ -76,6 +76,7 @@ You will need:
 6. Wire stripper
 7. Scissors
 8. USB-C cable
+9. 3 jumper wires (female-to-female)
 
 Steps:
 1. Print the [PCBs](#Project-Design-Showcase). Customize if needed. Note that the gerbers aren't included, so you'd have to generate them first from KiCad.
