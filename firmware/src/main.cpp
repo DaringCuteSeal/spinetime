@@ -21,6 +21,7 @@
 #include <Arduino.h>
 #include <tinyNeoPixel.h>
 #include <DS3231-RTC.h>
+#include <avr/sleep.h>
 #include "cfg.h"
 
 constexpr uint8_t RED_STEPS = COLOR_R / 60;
@@ -150,9 +151,10 @@ void set_bod_config()
 // Sets the system to power down mode.
 void system_power_down()
 {
-  SLPCTRL_CTRLA = (SLPCTRL_CTRLA & ~SLPCTRL_SMODE_gm) | SLPCTRL_SMODE_IDLE_gc; // set to power down sleep mode
-  SLPCTRL_CTRLA |= SLPCTRL_SEN_bm;                                              // enable the sleep bit
-  asm("sleep ;");
+   // idle makes CPU stop running instructions while the UPDI communication remains available
+    set_sleep_mode(SLEEP_MODE_IDLE);
+    sleep_enable();
+    sleep_cpu();
 }
 
 // Set the LED strip to the correct state based on the hour and minute.
