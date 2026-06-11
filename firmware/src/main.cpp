@@ -167,6 +167,22 @@ void set_led_strip()
   led_strip.setPixelColor(mod(curr_hour - HOUR_OFFSET + 1, LED_COUNT), led_strip.Color(COLOR_R * RED_STEPS * curr_min, COLOR_G * GREEN_STEPS * curr_min, COLOR_B * BLUE_STEPS * curr_min));
 }
 
+void routine()
+{
+#if SET_DBG == true
+  Serial.println(F("Configuring clock's LED.."));
+#endif
+  set_led_strip();
+  set_alarm();
+#if SET_DBG == true
+  Serial.println(F("System is powering down again.."));
+#endif
+  delay(2000); // safety measure...
+  isr_is_triggered = false;
+  system_power_down(); // sleep again
+}
+
+
 void setup()
 {
   configure_rtc();
@@ -188,21 +204,6 @@ void setup()
   select_adc_res();
   select_bandgap();
   routine();
-}
-
-void routine()
-{
-#if SET_DBG == true
-  Serial.println(F("Configuring clock's LED.."));
-#endif
-  set_led_strip();
-  set_alarm();
-#if SET_DBG == true
-  Serial.println(F("System is powering down again.."));
-#endif
-  delay(2000); // safety measure...
-  isr_is_triggered = false;
-  system_power_down(); // sleep again
 }
 
 void loop()
