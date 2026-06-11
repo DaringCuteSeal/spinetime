@@ -150,7 +150,7 @@ void set_bod_config()
 // Sets the system to power down mode.
 void system_power_down()
 {
-  SLPCTRL_CTRLA = (SLPCTRL_CTRLA & ~SLPCTRL_SMODE_gm) | SLPCTRL_SMODE_PDOWN_gc; // set to power down sleep mode
+  SLPCTRL_CTRLA = (SLPCTRL_CTRLA & ~SLPCTRL_SMODE_gm) | SLPCTRL_SMODE_IDLE_gc; // set to power down sleep mode
   SLPCTRL_CTRLA |= SLPCTRL_SEN_bm;                                              // enable the sleep bit
   asm("sleep ;");
 }
