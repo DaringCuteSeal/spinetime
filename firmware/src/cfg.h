@@ -55,7 +55,7 @@
 #define PIN_INT PIN_PA2
 
 // Pin used for sensing current battery voltage
-#define PIN_BAT PIN_PB2
+#define PIN_BAT PIN_PB4
 
 // Threshold for low battery
 // remember to sync with the resolution of the board's ADC, we have it set to 10 bits for now
