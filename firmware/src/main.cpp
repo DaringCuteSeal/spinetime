@@ -211,9 +211,9 @@ void loop()
   // halt everything when battery's low >:)
   while (analogRead(PIN_BAT) < LOW_BAT_THRESH)
   {
-    digitalWriteFast(BAT_LED_PIN, 1);
+    digitalWrite(BAT_LED_PIN, 1);
     delay(1000);
-    digitalWriteFast(BAT_LED_PIN, 0);
+    digitalWrite(BAT_LED_PIN, 0);
     delay(1000);
   }
   if (isr_is_triggered)
