@@ -179,7 +179,10 @@ void routine()
 #if SET_DBG == true
   Serial.println(F("System is powering down again.."));
 #endif
+  digitalWrite(BAT_LED_PIN, 1);
   delay(2000); // safety measure...
+  digitalWrite(BAT_LED_PIN, 0);
+
   isr_is_triggered = false;
   system_power_down(); // sleep again
 }
