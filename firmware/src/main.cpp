@@ -148,7 +148,7 @@ void set_bod_config()
   sei();
 }
 
-// Sets the system to power down mode.
+// Disable the CPU.
 void system_power_down()
 {
    // idle makes CPU stop running instructions while the UPDI communication remains available
