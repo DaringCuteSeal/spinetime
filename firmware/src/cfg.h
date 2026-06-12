@@ -59,7 +59,7 @@
 
 // Threshold for low battery
 // remember to sync with the resolution of the board's ADC, we have it set to 10 bits for now
-// 716 is approximately 3.5 volts.
-#define LOW_BAT_THRESH 716
+// 660 is approximately 3.5 volts.
+#define LOW_BAT_THRESH 660
 
 #define BAT_LED_PIN PIN_PC1
