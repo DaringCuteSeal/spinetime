@@ -161,9 +161,12 @@ void setup()
 
 void loop()
 {
+  if (analogRead(PIN_BAT) < LOW_BAT_THRESH) {
+    digitalWrite(BAT_LED_PIN, 1);
+    delay(1000);
+    digitalWrite(BAT_LED_PIN, 0);
+    delay(1000);
+  }
   upd_state();
-  delay(2000);
-  digitalWrite(BAT_LED_PIN, 1);
-  delay(100);
-  digitalWrite(BAT_LED_PIN, 0);
+  delay(10000);
 }
