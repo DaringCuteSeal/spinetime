@@ -51,9 +51,6 @@
 // Count of LEDs.
 #define LED_COUNT 24
 
-// Interupt pin used for sleep & wake-up.
-#define PIN_INT PIN_PA2
-
 // Pin used for sensing current battery voltage
 #define PIN_BAT PIN_PB4
 
