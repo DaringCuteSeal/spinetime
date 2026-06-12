@@ -56,7 +56,7 @@
 
 // Threshold for low battery
 // remember to sync with the resolution of the board's ADC, we have it set to 10 bits for now
-// 660 is approximately 3.5 volts.
+// Adjust to the voltage divider you have
 #define LOW_BAT_THRESH 660
 
 #define BAT_LED_PIN PIN_PC1
