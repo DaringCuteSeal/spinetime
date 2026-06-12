@@ -129,7 +129,7 @@ inline void unlock_ccp()
 }
 
 // modulo operator that works with negative numbers.
-inline uint8_t mod(uint8_t a, uint8_t b)
+inline int8_t mod(int8_t a, int8_t b)
 {
   if (a >= 0)
     return a % b;
@@ -161,8 +161,8 @@ void system_power_down()
 void set_led_strip()
 {
   bool tmp;
-  uint8_t curr_hour = rtc.getHour(tmp, tmp); // we do not need to read the AM/PM because we assume we're running with the 24-hour format.
-  uint8_t curr_min = rtc.getMinute();
+  int8_t curr_hour = rtc.getHour(tmp, tmp); // we do not need to read the AM/PM because we assume we're running with the 24-hour format.
+  int8_t curr_min = rtc.getMinute();
   led_strip.clear();
   // below, we blend together the current hour's LED and the next one's, with ratio of current_minute : (60 - current_minute).
   led_strip.setPixelColor(mod(curr_hour - HOUR_OFFSET, LED_COUNT), led_strip.Color(COLOR_R * RED_STEPS * (60 - curr_min), COLOR_G * GREEN_STEPS * (60 - curr_min), COLOR_B * BLUE_STEPS * (60 - curr_min)));
