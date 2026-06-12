@@ -21,7 +21,6 @@
 #include <Arduino.h>
 #include <tinyNeoPixel.h>
 #include <DS3231-RTC.h>
-#include <avr/sleep.h>
 #include "cfg.h"
 
 constexpr uint8_t RED_STEPS = COLOR_R / 60;
@@ -52,7 +51,7 @@ void set_time()
   
   DateTime now = rtclib.now();
 
-  #if SET_DBG == true
+#if SET_DBG == true
   Serial.println(F("Time has been set to: "));
   Serial.print(now.getYear(), DEC);
   Serial.print("-");
@@ -70,51 +69,11 @@ void set_time()
 }
 #endif
 
-// Subroutine to be called when waking up from sleep.
-void isr()
-{
-  isr_is_triggered = true;
-  rtc.turnOffAlarm(1); // turn off the alarm, otherwise the system will never wake up again
-}
-
 // Configure the DS3231 real-time system clock.
 void configure_rtc()
 {
   // Set to 24-hour format
   rtc.setClockMode(false);
-}
-// Set an alarm that calls ISR on the next (multiple of 10) minute.
-void set_alarm()
-{
-  uint8_t min_now = rtc.getMinute();
-  rtc.enableOscillator(false, false, 0);
-
-  byte alarm_day = 0;
-  byte alarm_hour = 0;
-  byte alarm_min = (min_now - (min_now % 1) + 1) % 60; // next wake-up minute, multiples of 10
-  byte alarm_sec = 0;
-  byte alarm_bits = 0b01100000; // minute & second matches
-  bool alarm_day_isday = false;
-  bool alarm_H12 = false;
-  bool alarm_PM = false;
-
-  rtc.setA1Time(alarm_day, alarm_hour, alarm_min, alarm_sec, alarm_bits, alarm_day_isday, alarm_H12, alarm_PM);
-  rtc.turnOnAlarm(1);
-
-  // disable the second alarm completely.
-
-  alarm_day = 1;
-  alarm_hour = 1;
-  alarm_day_isday = false;
-  alarm_H12 = false;
-  alarm_PM = false;
-  alarm_min = 0xFF;       // give gibberish value (255)
-  alarm_min = 0b01100000; // when min matches (never)
-
-  rtc.setA2Time(alarm_day, alarm_hour, alarm_min, alarm_bits, alarm_day_isday, alarm_H12, alarm_PM);
-  rtc.turnOffAlarm(2);
-
-  attachInterrupt(PIN_INT, isr, FALLING);
 }
 
 // sets the ADC voltage resolution
@@ -148,20 +107,9 @@ inline int8_t mod(int8_t a, int8_t b)
 // Set the brown-out detector configuration.
 void set_bod_config()
 {
-  cli(); // Disable interrupts (for writing to the configuration change protected register)
   // set brownout detector to sampled when sleeping to save power
   unlock_ccp();
   BOD_CTRLA = (BOD_CTRLA & ~BOD_SLEEP_gm) | BOD_SLEEP_SAMPLED_gc;
-  sei();
-}
-
-// Disable the CPU.
-void system_power_down()
-{
-   // idle makes CPU stop running instructions while the UPDI communication remains available
-    set_sleep_mode(SLEEP_MODE_IDLE);
-    sleep_enable();
-    sleep_cpu();
 }
 
 // Set the LED strip to the correct state based on the hour and minute.
@@ -170,33 +118,30 @@ void set_led_strip()
   bool tmp;
   int8_t curr_hour = rtc.getHour(tmp, tmp); // we do not need to read the AM/PM because we assume we're running with the 24-hour format.
   int8_t curr_min = rtc.getMinute();
+#if SET_DBG == true
+  Serial.println(F("Hour now: "));
+  Serial.print(curr_hour);
+  Serial.println(F("\nMin now: "));
+  Serial.print(curr_min);
+  Serial.print(F("\n"));
+
+#endif
   led_strip.clear();
   // below, we blend together the current hour's LED and the next one's, with ratio of current_minute : (60 - current_minute).
   led_strip.setPixelColor(mod(curr_hour - HOUR_OFFSET, LED_COUNT), led_strip.Color(COLOR_R * RED_STEPS * (60 - curr_min), COLOR_G * GREEN_STEPS * (60 - curr_min), COLOR_B * BLUE_STEPS * (60 - curr_min)));
   led_strip.setPixelColor(mod(curr_hour - HOUR_OFFSET + 1, LED_COUNT), led_strip.Color(COLOR_R * RED_STEPS * curr_min, COLOR_G * GREEN_STEPS * curr_min, COLOR_B * BLUE_STEPS * curr_min));
 }
 
-void routine()
-{
+void upd_state() {
 #if SET_DBG == true
   Serial.println(F("Configuring clock's LED.."));
 #endif
   set_led_strip();
-  set_alarm();
-#if SET_DBG == true
-  Serial.println(F("System is powering down again.."));
-#endif
-  digitalWrite(BAT_LED_PIN, 1);
-  delay(10000); // safety measure...
-  digitalWrite(BAT_LED_PIN, 0);
-
-  isr_is_triggered = false;
-  system_power_down(); // sleep again
 }
-
 
 void setup()
 {
+  delay(10000);
   Wire.begin();
   configure_rtc();
 #if SET_DBG == true
@@ -209,25 +154,16 @@ void setup()
   led_strip.show();
   led_strip.setBrightness(50);
   set_bod_config();
-  isr_is_triggered = false;
   delay(2000);
-  set_alarm();
-  sei();
   select_adc_res();
   select_bandgap();
-  routine();
 }
 
 void loop()
 {
-  // halt everything when battery's low >:)
-  while (analogRead(PIN_BAT) < LOW_BAT_THRESH)
-  {
-    digitalWrite(BAT_LED_PIN, 1);
-    delay(1000);
-    digitalWrite(BAT_LED_PIN, 0);
-    delay(1000);
-  }
-  if (isr_is_triggered)
-    routine();
+  upd_state();
+  delay(2000);
+  digitalWrite(BAT_LED_PIN, 1);
+  delay(100);
+  digitalWrite(BAT_LED_PIN, 0);
 }
