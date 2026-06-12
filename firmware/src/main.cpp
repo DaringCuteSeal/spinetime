@@ -28,7 +28,7 @@ constexpr uint8_t RED_STEPS = COLOR_R / 60;
 constexpr uint8_t GREEN_STEPS = COLOR_G / 60;
 constexpr uint8_t BLUE_STEPS = COLOR_B / 60;
 
-bool isr_is_triggered = false;
+volatile bool isr_is_triggered = false;
 
 tinyNeoPixel led_strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 DS3231 rtc;
@@ -43,9 +43,16 @@ DateTime compile_time(__DATE__, __TIME__);
 // Set the time to compilation time.
 void set_time()
 {
-  rtc.setEpoch(compile_time.getUnixTime());
+  rtc.setYear(compile_time.getYear() - 2000);
+  rtc.setMonth(compile_time.getMonth());
+  rtc.setDate(compile_time.getDay());
+  rtc.setHour(compile_time.getHour());
+  rtc.setMinute(compile_time.getMinute());
+  rtc.setSecond(compile_time.getSecond());
+  
   DateTime now = rtclib.now();
-#if SET_DBG == true
+
+  #if SET_DBG == true
   Serial.println(F("Time has been set to: "));
   Serial.print(now.getYear(), DEC);
   Serial.print("-");
@@ -84,7 +91,7 @@ void set_alarm()
 
   byte alarm_day = 0;
   byte alarm_hour = 0;
-  byte alarm_min = (min_now - (min_now % 10) + 10) % 60; // next wake-up minute, multiples of 10
+  byte alarm_min = (min_now - (min_now % 1) + 1) % 60; // next wake-up minute, multiples of 10
   byte alarm_sec = 0;
   byte alarm_bits = 0b01100000; // minute & second matches
   bool alarm_day_isday = false;
@@ -180,7 +187,7 @@ void routine()
   Serial.println(F("System is powering down again.."));
 #endif
   digitalWrite(BAT_LED_PIN, 1);
-  delay(2000); // safety measure...
+  delay(10000); // safety measure...
   digitalWrite(BAT_LED_PIN, 0);
 
   isr_is_triggered = false;
@@ -190,6 +197,7 @@ void routine()
 
 void setup()
 {
+  Wire.begin();
   configure_rtc();
 #if SET_DBG == true
   Serial.begin(SERIAL_BAUD_RATE);
@@ -197,7 +205,6 @@ void setup()
 #if SET_TIME == true
   set_time();
 #endif
-  Wire.begin();
   led_strip.begin();
   led_strip.show();
   led_strip.setBrightness(50);
