@@ -119,7 +119,7 @@ inline void select_adc_res()
 // select the correct reference voltage for reading battery level
 inline void select_bandgap()
 {
-  VREF_CTRLA = (VREF_CTRLA & ~VREF_ADC0REFSEL0_bm) | VREF_ADC0REFSEL_1V1_gc;
+  analogReference(INTERNAL1V1);  
 }
 
 // enable writing to some locked registers, by writing to the CCP (configuration change protection) register.
