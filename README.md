@@ -4,6 +4,8 @@
 ![SpineTime magazine page](showcase/zine.png)
 [Magazine PDF](showcase/zine.pdf)
 
+[Watch the short demo here!](https://www.youtube.com/shorts/rvpcNDkeEeY)
+
 ---
 
 ![Mockup of Spinetime](showcase/mockup.png)
