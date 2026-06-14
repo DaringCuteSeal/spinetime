@@ -101,6 +101,9 @@ Spinetime, SpineTime, spinetime are all valid. No spineTime or spine_time or any
 
 ![Photo of the strap casing](showcase/casing.jpeg)
 
+
+Note: I built it with LEDs too big so I didn't put on the casing lid.
+
 ### PCBs
 
 The actual bookmark ([project files](kicad/bookmark), [.step file](kicad/bookmark/bookmark.step)):
