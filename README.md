@@ -1,7 +1,7 @@
 
 # Spinetime
 
-![SpineTime magazine page](showcase/zine.png)
+![SpineTime magazine page](showcase/zine.png?v=1)
 [Magazine PDF](showcase/zine.pdf)
 
 [Watch the short demo here!](https://www.youtube.com/shorts/rvpcNDkeEeY)
