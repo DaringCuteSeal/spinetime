@@ -130,6 +130,7 @@ void set_led_strip()
   // below, we blend together the current hour's LED and the next one's, with ratio of current_minute : (60 - current_minute).
   led_strip.setPixelColor(mod(curr_hour - HOUR_OFFSET, LED_COUNT), led_strip.Color(COLOR_R * RED_STEPS * (60 - curr_min), COLOR_G * GREEN_STEPS * (60 - curr_min), COLOR_B * BLUE_STEPS * (60 - curr_min)));
   led_strip.setPixelColor(mod(curr_hour - HOUR_OFFSET + 1, LED_COUNT), led_strip.Color(COLOR_R * RED_STEPS * curr_min, COLOR_G * GREEN_STEPS * curr_min, COLOR_B * BLUE_STEPS * curr_min));
+  led_strip.show();
 }
 
 void upd_state() {
@@ -151,8 +152,6 @@ void setup()
   set_time();
 #endif
   led_strip.begin();
-  led_strip.show();
-  led_strip.setBrightness(50);
   set_bod_config();
   delay(2000);
   select_adc_res();
