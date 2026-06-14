@@ -91,6 +91,10 @@ Steps:
 8. FLash the firmware. Initially, set `SET_TIME` to `true` in the `cfg.h` file first to set time, then flash again with `SET_TIME` set to `false`. You will need a USB-to-TTL adapter. Connect the TX pin of the adapter to the TX pin of SpineTime's controller PCB and the RX pin of the adapter to RX. Note that the PCB doesn't have labels for that.. just check the kicad file to know which is which :P. Then, connect the adapter's ground accordingly.
 9. You should be done! There's no screw assembly required—everything uses compliant mechanism.
 
+Gotchas:
+1. If you can't flash the ATtiny1616, try changing to another device. Initially I couldn't flash my ATtiny and as it turns out, my laptop has a bad USB controller.
+2. Some sources online say that SK6812 LEDs are difficult to solder and require lower temp but I found that with hand-soldering, even up to ~350°C is fine. (just don't roast the LEDs for 1 minute straight I guess)
+
 ## Spelling
 Spinetime, SpineTime, spinetime are all valid. No spineTime or spine_time or anything else.
 ## Project Design Showcase
