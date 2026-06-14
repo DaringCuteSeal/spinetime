@@ -94,6 +94,13 @@ Steps:
 ## Spelling
 Spinetime, SpineTime, spinetime are all valid. No spineTime or spine_time or anything else.
 ## Project Design Showcase
+
+### IRL Build
+
+![Photo of the bookmark](showcase/bookmark.jpeg)
+
+![Photo of the strap casing](showcase/casing.jpeg)
+
 ### PCBs
 
 The actual bookmark ([project files](kicad/bookmark), [.step file](kicad/bookmark/bookmark.step)):
