@@ -68,6 +68,10 @@ version.
 ## How it Works
 The LEDs of the bookmark are controlled by a separate controller unit. An ATtiny1616 MCU is used alongside a DS3231 RTC.
 
+## Specs
+- Power usage: about 20-25 mA when bookmark is on (3.7V * 25mA = 92.5 mW). Depends on LED color. 7 mA when bookmark is switched off (3.7V * 7mA = 25.9 mW).
+- Use duration: about 1d 16h (1000 mAh ÷ 25 mA). Probably a bit lower since we won't (and can't) use the full capacity of the battery.
+
 ## Build Instruction
 You will need:
 1. A soldering iron
