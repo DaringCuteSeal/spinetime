@@ -162,9 +162,20 @@ void upd_state() {
   set_led_strip();
 }
 
+void upd_state_low_bat() {
+#if SET_DBG == true
+  Serial.println(F("Configuring clock's LED.."));
+#endif
+  set_led_strip();
+  digitalWrite(BAT_LED_PIN, 1); // pulse builtin LED
+  delay(1000);
+  led_strip.clear();
+  led_strip.show();
+  delay(1000);
+}
+
 void setup()
 {
-  delay(10000);
   Wire.begin();
   configure_rtc();
 #if SET_DBG == true
@@ -184,12 +195,9 @@ void setup()
 void loop()
 {
   if (analogRead(PIN_BAT) < LOW_BAT_THRESH) {
-    digitalWrite(BAT_LED_PIN, 1);
-    delay(1000);
-    digitalWrite(BAT_LED_PIN, 0);
-    delay(1000);
+    upd_state_low_bat();
   } else {
-  upd_state();
-  delay(10000);
+    upd_state();
   }
+  delay(10000);
 }
