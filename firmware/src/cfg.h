@@ -31,9 +31,9 @@
 // Red channel rgb(255, 98, 0)
 #define COLOR_R 255
 // Green channel
-#define COLOR_G 74
+#define COLOR_G 98
 // Blue channel
-#define COLOR_B 115
+#define COLOR_B 5
 
 // Baud rate (for serial communication, used only for debugging if the debug flag is set).
 #define SERIAL_BAUD_RATE 38400
