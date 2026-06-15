@@ -27,16 +27,9 @@
 // The starting hour of the bookmark.
 #define HOUR_OFFSET 3
 
-// Color of LED, when combined together (two LEDs will be lit up, so this is the
-// sum of both). Default: rgb(180, 60, 0) (amber).
-//
-// It is recommended to set the
-// value here to multiples of 60 so that the linear interpolation with
-// resolution of COLOR ÷ 60 will be able to replicate the original color values
-// listed below.
-
-// Red channel rgb(116, 56, 16)
-#define COLOR_R 21
+// Color of LED, when summed up together (2 LEDs will be on at a time when minute is not near 00).
+// Red channel rgb(255, 98, 0)
+#define COLOR_R 255
 // Green channel
 #define COLOR_G 74
 // Blue channel
