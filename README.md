@@ -109,6 +109,8 @@ Spinetime, SpineTime, spinetime are all valid. No spineTime or spine_time or any
 
 ![Photo of the strap casing](showcase/casing.jpeg)
 
+<img width="2048" height="1536" alt="Photo of the bookmark being used at a computer lab" src="https://github.com/user-attachments/assets/38775f87-92a8-446d-8135-c233dbc54516" />
+
 
 Note: I built it with LEDs too big so I didn't put on the casing lid.
 
