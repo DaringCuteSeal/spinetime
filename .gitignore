@@ -1,5 +1,7 @@
 .history
 kicad/controller/controller-backups/**
+kicad/controller/project-backups/**
+*-cache
 *.lck
 *.gbr
 *.drl
