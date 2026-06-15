@@ -19,7 +19,7 @@
  */
 
 // Set this to true in order to configure the RTC's time to the compilation time.
-#define SET_TIME true
+#define SET_TIME false
 
 // Set this to true in order for the microcontroller to print out debug messages (via serial communication).
 #define SET_DBG true
@@ -35,12 +35,12 @@
 // resolution of COLOR ÷ 60 will be able to replicate the original color values
 // listed below.
 
-// Red channel
-#define COLOR_R 180
+// Red channel rgb(116, 56, 16)
+#define COLOR_R 21
 // Green channel
-#define COLOR_G 60
+#define COLOR_G 74
 // Blue channel
-#define COLOR_B 0
+#define COLOR_B 115
 
 // Baud rate (for serial communication, used only for debugging if the debug flag is set).
 #define SERIAL_BAUD_RATE 38400
@@ -54,9 +54,9 @@
 // Pin used for sensing current battery voltage
 #define PIN_BAT PIN_PB4
 
-// Threshold for low battery
-// remember to sync with the resolution of the board's ADC, we have it set to 10 bits for now
-// Adjust to the voltage divider you have
-#define LOW_BAT_THRESH 660
+// Threshold for low battery (in 10 bits, so 0 to 1024)
+// remember to sync with the resolution of the board's ADC,
+// and Adjust to the voltage divider you have
+#define LOW_BAT_THRESH 600
 
 #define BAT_LED_PIN PIN_PC1
